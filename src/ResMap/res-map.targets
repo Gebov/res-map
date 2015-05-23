@@ -7,7 +7,7 @@
   </PropertyGroup>
   
   <UsingTask AssemblyFile="MsBuildTasks\Gebov.Res.MsBuild.dll" TaskName="Gebov.Res.MsBuild.ResourceMapTask" />
-  <Target Name="GenerateResMappings">
+  <Target Name="GenerateResMappings" Condition=" '$(Configuration)'=='Debug' ">
     <ResourceMapTask Inputs="@(EmbeddedResource)" RootNamespace="$(RootNamespace)" WorkDir="$(BaseIntermediateOutputPath)">
       <Output TaskParameter="MappingFilePath" PropertyName="MappingFilePath"/>
     </ResourceMapTask>

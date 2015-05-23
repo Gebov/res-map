@@ -56,7 +56,7 @@ namespace ResMap
             var contents = this.embeddedResMapText;
             var builder = new System.Text.StringBuilder();
             foreach (var mapping in mappings)
-                builder.AppendFormat("\t\t\{0}.Add(\"{1}\", @\"{2}\");", Constants.PropertyName, mapping.Key, mapping.Value).AppendLine();
+                builder.AppendFormat("\t\t\t{0}.Add(\"{1}\", @\"{2}\");", Constants.PropertyName, mapping.Key, mapping.Value).AppendLine();
 
             return contents.Replace(Constants.MappingsPlaceHolder, builder.ToString());
         }

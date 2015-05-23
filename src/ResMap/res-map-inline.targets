@@ -117,7 +117,7 @@
     </Task>
   </UsingTask>
 
-  <Target Name="GenerateResMappings">
+  <Target Name="GenerateResMappings" Condition=" '$(Configuration)'=='Debug' ">
     <ResourceMapTask Inputs="@(EmbeddedResource)" RootNamespace="$(RootNamespace)" WorkDir="$(BaseIntermediateOutputPath)">
       <Output TaskParameter="MappingFilePath" PropertyName="MappingFilePath"/>
     </ResourceMapTask>
