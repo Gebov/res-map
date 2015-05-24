@@ -6,3 +6,7 @@ needed to recompile your project again.
 
 For example if you have a text file from which you are displaying some content, then you would benefit from not recompiling and 
 restarting the application for the changes to take effect.
+
+
+## Nuget
+Install-Package ResMap
