@@ -10,3 +10,20 @@ restarting the application for the changes to take effect.
 
 ## Nuget
 Install-Package ResMap
+
+
+## Sample usage
+```
+private static Stream GetStream(string resourceName, System.Reflection.Assembly containingAssembly)
+{
+#if DEBUG
+    string filePath = null;
+    if (ResRepo.TryGetPath(containingAssembly.GetName().FullName, resourceName, out filePath))
+        return new FileStream(filePath, FileMode.Open);
+
+    return null;
+#else
+    return containingAssembly.GetManifestResourceStream("YourProject.Resource.txt");
+#endif
+}
+```
