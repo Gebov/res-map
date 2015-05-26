@@ -23,7 +23,7 @@ private static Stream GetStream(string resourceName, System.Reflection.Assembly 
 
     return null;
 #else
-    return containingAssembly.GetManifestResourceStream("YourProject.Resource.txt");
+    return containingAssembly.GetManifestResourceStream(resourceName);
 #endif
 }
 ```
